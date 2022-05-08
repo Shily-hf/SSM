@@ -37,4 +37,15 @@ public class EmployeeService {
 
         return count == 0;
     }
+
+    //按照员工id查询员工
+    public Employee getEmp(Integer id) {
+        Employee employee = employeeMapper.selectByPrimaryKey(id);
+        return employee;
+    }
+
+    //员工更新
+    public void updateEmp(Employee employee) {
+        employeeMapper.updateByPrimaryKeySelective(employee);
+    }
 }
